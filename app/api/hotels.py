@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app.schemas.hotels import HotelCreate, HotelResponse
+from app.schemas.hotels import HotelCreate, HotelResponse, HotelListResponse
 from app.models.hotelModel import Hotel
 from app.db.session import SessionLocal
 from app.core.security import get_current_user
@@ -55,7 +55,7 @@ async def create_hotel(
     return hotel
 
 
-@router.get("/", response_model=list[HotelResponse])
+@router.get("/", response_model=HotelListResponse)
 async def list_hotels(
     city: str | None = None,
     db: Session = Depends(get_db)

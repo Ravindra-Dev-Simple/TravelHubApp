@@ -10,6 +10,7 @@ class HotelCreate(BaseModel):
     longitude: Optional[float]
     amenities: Optional[List[str]] = []
 
+
 class HotelResponse(BaseModel):
     id: str
     name: str
@@ -22,4 +23,9 @@ class HotelResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+class HotelListResponse(BaseModel):
+    status: str
+    message: str
+    data: List[HotelResponse]
 
