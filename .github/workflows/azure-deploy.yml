@@ -7,42 +7,55 @@ on:
 
 env:
   IMAGE_NAME: travelapi
+  WEBAPP_NAME: TravelHubApp
+  RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
+  ACR_LOGIN_SERVER: ${{ secrets.ACR_LOGIN_SERVER }}
+  ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
+  ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      # 2️⃣ Login to Azure
       - name: Login to Azure
         uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # 3️⃣ Login to Azure Container Registry
       - name: Login to ACR
         run: |
-          docker login ${{ secrets.ACR_LOGIN_SERVER }} \
-          -u ${{ secrets.ACR_USERNAME }} \
-          -p ${{ secrets.ACR_PASSWORD }}
+          docker login "${{ env.ACR_LOGIN_SERVER }}" \
+            -u "${{ env.ACR_USERNAME }}" \
+            -p "${{ env.ACR_PASSWORD }}"
 
-      # 4️⃣ Build Docker Image with commit SHA tag
-      - name: Build Docker Image
+      - name: Build image
         run: |
-          docker build -t ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }} .
+          docker build \
+            -t "${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}" \
+            -t "${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest" \
+            .
 
-      # 5️⃣ Push Docker Image
-      - name: Push Docker Image
+      - name: Push image
         run: |
-          docker push ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          docker push "${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
+          docker push "${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest"
 
-      # 6️⃣ Deploy to Azure Web App using specific SHA tag
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v2
+      - name: Configure web app container and restart
+        uses: azure/CLI@v2
         with:
-          app-name: TravelHubApp
-          images: ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          inlineScript: |
+            az webapp config container set \
+              --name "${{ env.WEBAPP_NAME }}" \
+              --resource-group "${{ env.RESOURCE_GROUP }}" \
+              --docker-custom-image-name "${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}" \
+              --docker-registry-server-url "https://${{ env.ACR_LOGIN_SERVER }}" \
+              --docker-registry-server-user "${{ env.ACR_USERNAME }}" \
+              --docker-registry-server-password "${{ env.ACR_PASSWORD }}"
+
+            az webapp restart \
+              --name "${{ env.WEBAPP_NAME }}" \
+              --resource-group "${{ env.RESOURCE_GROUP }}"
