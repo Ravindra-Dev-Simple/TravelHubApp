@@ -1,0 +1,85 @@
+2026-02-13 11:40:31 - airbnb_api - ERROR - Error: 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'token'), 'msg': 'Field required', 'input': {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4M2ZlMDg0OS02MGUyLTQ3M2UtOGMyNC1kODg1NTg4YjJkNTEiLCJleHAiOjE3NzA5NjM5MzF9.3bm3Ripn9HO7n0xdZP5j-RXDA8xotFWzcaFeh20QzfI', 'token_type': 'bearer'}}
+
+  File "C:\Users\ravindra.kemble\Desktop\testing\AirBnB\app\api\auth.py", line 47, in login
+    POST /auth/login - Time: 0.132s
+2026-02-13 12:29:04 - airbnb_api - ERROR - Error: [Errno 2] No such file or directory: '/mnt/data/INV-21FC35D1.pdf' - Time: 0.055s
+2026-02-13 12:31:19 - airbnb_api - ERROR - Error: [Errno 2] No such file or directory: '/mnt/data/INV-262613F1.pdf' - Time: 0.198s
+2026-02-13 12:32:06 - airbnb_api - ERROR - Error: [Errno 2] No such file or directory: 'invoice_dir/INV-1A5E4913.pdf' - Time: 0.172s
+2026-02-13 13:10:24 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (3819, "Check constraint 'tbl_reviews_chk_1' is violated.")
+[SQL: INSERT INTO tbl_reviews (id, user_id, hotel_id, booking_id, rating, comment, created_at) VALUES (%(id)s, %(user_id)s, %(hotel_id)s, %(booking_id)s, %(rating)s, %(comment)s, %(created_at)s)]
+[parameters: {'id': '7449fd8c-e5bd-475a-9141-d6dbf07bbda8', 'user_id': '83fe0849-60e2-473e-8c24-d885588b2d51', 'hotel_id': 'f3e24529-bd0a-4d3b-a4d8-bd9d3db7d98e', 'booking_id': 'f434bdc7-d57c-4ca4-bf38-527ca7d270f2', 'rating': 8, 'comment': 'Good service', 'created_at': datetime.datetime(2026, 2, 13, 7, 40, 24, 810876)}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 0.082s
+2026-02-13 13:17:44 - airbnb_api - ERROR - Error: Don't know how to join to <Mapper at 0x26c725e03d0; User>. Please use the .select_from() method to establish an explicit left side, as well as providing an explicit ON clause if not present already to help resolve the ambiguity. - Time: 0.108s
+2026-02-13 13:20:10 - airbnb_api - ERROR - Error: relationship 'user' expects a class or a mapper argument (received: <class 'sqlalchemy.sql.schema.Table'>) - Time: 0.029s
+2026-02-13 13:21:03 - airbnb_api - ERROR - Error: relationship 'user' expects a class or a mapper argument (received: <class 'sqlalchemy.sql.schema.Table'>) - Time: 0.019s
+2026-02-13 13:21:47 - airbnb_api - ERROR - Error: relationship 'user' expects a class or a mapper argument (received: <class 'sqlalchemy.sql.schema.Table'>) - Time: 0.022s
+2026-02-13 13:23:15 - airbnb_api - ERROR - Error: Could not determine join condition between parent/child tables on relationship User.reviews - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression. - Time: 0.005s
+2026-02-13 13:28:38 - airbnb_api - ERROR - Error: Textual SQL expression '\n        SELECT r.id,u.na...' should be explicitly declared as text('\n        SELECT r.id,u.na...') - Time: 0.007s
+2026-02-13 13:28:39 - airbnb_api - ERROR - Error: Textual SQL expression '\n        SELECT r.id,u.na...' should be explicitly declared as text('\n        SELECT r.id,u.na...') - Time: 0.005s
+2026-02-13 13:29:39 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (1054, "Unknown column 'u.name' in 'field list'")
+[SQL: 
+        SELECT r.id,u.name as user_name, r.hotel_id, r.user_id, r.booking_id, r.rating, r.comment
+        FROM tbl_reviews r
+        JOIN tbl_users u ON r.user_id = u.id
+        WHERE r.hotel_id = %(hotel_id)s
+        ORDER BY r.created_at DESC
+    ]
+[parameters: {'hotel_id': 'f3e24529-bd0a-4d3b-a4d8-bd9d3db7d98e'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 0.139s
+2026-02-13 13:32:09 - airbnb_api - ERROR - Error: 1 validation error:
+  {'type': 'missing', 'loc': ('response', 0, 'user'), 'msg': 'Field required', 'input': ('b554e348-3b4d-4a3c-a40e-44dbc92ecde7', 'Ravindra Ramchandra Kemble', 'f3e24529-bd0a-4d3b-a4d8-bd9d3db7d98e', '83fe0849-60e2-473e-8c24-d885588b2d51', 'f434bdc7-d57c-4ca4-bf38-527ca7d270f2', 5, 'Good service')}
+
+  File "C:\Users\ravindra.kemble\Desktop\testing\AirBnB\app\api\review.py", line 47, in get_reviews_by_hotel
+    GET /reviews/{hotel_id}/reviews - Time: 0.057s
+2026-02-13 15:41:32 - airbnb_api - ERROR - Error: 'list' object has no attribute 'id' - Time: 0.037s
+2026-02-13 15:43:06 - airbnb_api - ERROR - Error: cannot access local variable 'booking' where it is not associated with a value - Time: 0.136s
+2026-02-13 15:44:40 - airbnb_api - ERROR - Error: 'NoneType' object has no attribute 'id' - Time: 0.098s
+2026-02-13 19:00:59 - airbnb_api - ERROR - Error: 'Login' object has no attribute 'username' - Time: 0.016s
+2026-02-13 19:27:06 - airbnb_api - ERROR - Error: name 'response' is not defined - Time: 0.679s
+2026-02-13 19:37:39 - airbnb_api - ERROR - Error: Response.set_cookie() missing 1 required positional argument: 'self' - Time: 0.299s
+2026-02-13 19:54:30 - airbnb_api - ERROR - Error: generate_invoice_pdf() missing 1 required positional argument: 'company' - Time: 0.059s
+2026-02-13 20:00:40 - airbnb_api - ERROR - Error: 'dict' object has no attribute 'booking_details' - Time: 0.200s
+2026-02-16 15:09:34 - airbnb_api - ERROR - Error: 'dict' object has no attribute 'booking_details' - Time: 0.032s
+2026-02-24 19:19:11 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (1045, "Access denied for user 'ravindra.kemble'@'154.84.229.202' (using password: NO)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 1.149s
+2026-02-24 19:21:53 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '8898@travelhubdbserver.mysql.database.azure.com' ([Errno 11003] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 0.203s
+2026-02-24 19:24:13 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '8898@travelhubdbserver.mysql.database.azure.com' ([Errno 11003] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 0.152s
+2026-02-24 19:36:31 - airbnb_api - ERROR - Error: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods - Time: 0.480s
+2026-02-24 19:40:20 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (1045, "Access denied for user 'ravindra123@travelhubdbserver'@'154.84.229.202' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 1.067s
+2026-02-25 10:46:56 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (1045, "Access denied for user 'ravindra123@travelhubdbserver'@'154.84.229.202' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 0.234s
+2026-02-25 10:52:00 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (3159, 'Connections using insecure transport are prohibited while --require_secure_transport=ON.')
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 0.094s
+2026-02-25 10:54:22 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (3159, 'Connections using insecure transport are prohibited while --require_secure_transport=ON.')
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 0.074s
+2026-02-25 10:54:41 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (3159, 'Connections using insecure transport are prohibited while --require_secure_transport=ON.')
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 0.107s
+2026-02-25 10:54:52 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (3159, 'Connections using insecure transport are prohibited while --require_secure_transport=ON.')
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 0.057s
+2026-02-25 10:59:02 - airbnb_api - ERROR - Error: 'set' object has no attribute 'get' - Time: 0.023s
+2026-02-25 10:59:58 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'travelhubdbserver.mysql.database.azure.com' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 20.236s
+2026-02-25 11:29:45 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'travelhubdbserver.mysql.database.azure.com' ([SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:992))")
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 0.143s
+2026-02-25 11:31:21 - airbnb_api - ERROR - Error: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'travelhubdbserver.mysql.database.azure.com' ([SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:992))")
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - Time: 0.366s
+2026-02-25 11:33:57 - airbnb_api - ERROR - Error: 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'full_name'), 'msg': 'Field required', 'input': <app.models.usersModel.User object at 0x00000249D19E52D0>}
+
+  File "C:\Users\ravindra.kemble\Desktop\testing\AirBnB\app\api\users.py", line 12, in get_profile
+    GET /users/me - Time: 0.078s
+2026-02-25 11:34:22 - airbnb_api - ERROR - Error: 2 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'full_name'), 'msg': 'Field required', 'input': <app.models.usersModel.User object at 0x00000249D1C2E810>}
+  {'type': 'missing', 'loc': ('response', 1, 'full_name'), 'msg': 'Field required', 'input': <app.models.usersModel.User object at 0x00000249D1C2DC90>}
+
+  File "C:\Users\ravindra.kemble\Desktop\testing\AirBnB\app\api\users.py", line 26, in list_users
+    GET /users/ - Time: 0.089s
+2026-02-25 11:35:01 - airbnb_api - ERROR - Error: 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'full_name'), 'msg': 'Field required', 'input': <app.models.usersModel.User object at 0x00000249D1C38610>}
+
+  File "C:\Users\ravindra.kemble\Desktop\testing\AirBnB\app\api\users.py", line 12, in get_profile
+    GET /users/me - Time: 0.105s

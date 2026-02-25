@@ -1,0 +1,66 @@
+2026-02-17 10:53:44 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 10:53:44 - airbnb_api - INFO - Background scheduler started
+2026-02-17 10:53:44 - airbnb_api - INFO - API startup complete
+2026-02-17 10:53:53 - airbnb_api - INFO - Request: GET /
+2026-02-17 10:54:56 - airbnb_api - INFO - Client: 127.0.0.1
+2026-02-17 10:54:56 - airbnb_api - INFO - Response: 404 - Time: 62.541s
+2026-02-17 10:54:56 - airbnb_api - INFO - API shutting down
+2026-02-17 10:55:00 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 10:55:00 - airbnb_api - INFO - Background scheduler started
+2026-02-17 10:55:00 - airbnb_api - INFO - API startup complete
+2026-02-17 10:55:12 - airbnb_api - INFO - Request: GET /
+2026-02-17 10:55:12 - airbnb_api - INFO - Client: 127.0.0.1
+2026-02-17 10:55:12 - airbnb_api - INFO - Response: 404 - Time: 0.000s
+2026-02-17 10:55:12 - airbnb_api - INFO - Request: GET /favicon.ico
+2026-02-17 10:55:12 - airbnb_api - INFO - Client: 127.0.0.1
+2026-02-17 10:55:12 - airbnb_api - INFO - Response: 404 - Time: 0.006s
+2026-02-17 10:55:16 - airbnb_api - INFO - Request: GET /docs
+2026-02-17 10:55:16 - airbnb_api - INFO - Client: 127.0.0.1
+2026-02-17 10:55:16 - airbnb_api - INFO - Response: 200 - Time: 0.004s
+2026-02-17 10:55:16 - airbnb_api - INFO - Request: GET /openapi.json
+2026-02-17 10:55:16 - airbnb_api - INFO - Client: 127.0.0.1
+2026-02-17 10:55:16 - airbnb_api - INFO - Response: 200 - Time: 0.109s
+2026-02-17 10:58:45 - airbnb_api - INFO - API shutting down
+2026-02-17 10:59:05 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 10:59:05 - airbnb_api - INFO - Background scheduler started
+2026-02-17 10:59:05 - airbnb_api - INFO - API startup complete
+2026-02-17 11:00:11 - airbnb_api - INFO - API shutting down
+2026-02-17 11:00:13 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 11:00:13 - airbnb_api - INFO - Background scheduler started
+2026-02-17 11:00:13 - airbnb_api - INFO - API startup complete
+2026-02-17 11:00:17 - airbnb_api - INFO - API shutting down
+2026-02-17 11:00:18 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 11:00:18 - airbnb_api - INFO - Background scheduler started
+2026-02-17 11:00:18 - airbnb_api - INFO - API startup complete
+2026-02-17 11:00:23 - airbnb_api - INFO - API shutting down
+2026-02-17 11:00:24 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 11:00:24 - airbnb_api - INFO - Background scheduler started
+2026-02-17 11:00:24 - airbnb_api - INFO - API startup complete
+2026-02-17 11:00:27 - airbnb_api - INFO - API shutting down
+2026-02-17 11:00:28 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 11:00:28 - airbnb_api - INFO - Background scheduler started
+2026-02-17 11:00:28 - airbnb_api - INFO - API startup complete
+2026-02-17 11:00:44 - airbnb_api - INFO - API shutting down
+2026-02-17 11:00:45 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 11:00:45 - airbnb_api - INFO - Background scheduler started
+2026-02-17 11:00:45 - airbnb_api - INFO - API startup complete
+2026-02-17 11:06:34 - airbnb_api - INFO - API shutting down
+2026-02-17 11:16:16 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 11:16:16 - airbnb_api - INFO - Background scheduler started
+2026-02-17 11:16:16 - airbnb_api - INFO - API startup complete
+2026-02-17 11:16:23 - airbnb_api - INFO - API shutting down
+2026-02-17 11:16:25 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 11:16:25 - airbnb_api - INFO - Background scheduler started
+2026-02-17 11:16:25 - airbnb_api - INFO - API startup complete
+2026-02-17 11:16:36 - airbnb_api - INFO - API shutting down
+2026-02-17 11:16:37 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 11:16:37 - airbnb_api - INFO - Background scheduler started
+2026-02-17 11:16:37 - airbnb_api - INFO - API startup complete
+2026-02-17 11:16:38 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 11:16:38 - airbnb_api - INFO - Background scheduler started
+2026-02-17 11:16:38 - airbnb_api - INFO - API startup complete
+2026-02-17 11:19:08 - airbnb_api - INFO - API shutting down
+2026-02-17 11:19:11 - airbnb_api - INFO - Starting TravelHub API...
+2026-02-17 11:19:11 - airbnb_api - INFO - Background scheduler started
+2026-02-17 11:19:11 - airbnb_api - INFO - API startup complete
+2026-02-17 11:22:06 - airbnb_api - INFO - API shutting down
