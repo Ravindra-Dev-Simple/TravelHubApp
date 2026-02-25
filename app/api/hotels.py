@@ -68,7 +68,7 @@ async def list_hotels(
     
     hotels = query.all()
     logger.info(f"Returned {len(hotels)} hotels")
-    return hotels
+    return {"status": "Success","message": "Updated successfully", "data": hotels}
 
 @router.patch("/update_hotel/{hotel_id}")
 async def update_hotel(
